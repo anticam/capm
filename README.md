@@ -26,3 +26,6 @@ Learn more at https://cap.cloud.sap/docs/get-started/.
 
 ### source
 [CAPM](https://www.lab.ui5cn.com/docs/creating-custom-ui5-app)
+
+http://localhost:4004/#Shell-home
+http://localhost:4004/#manage-Students

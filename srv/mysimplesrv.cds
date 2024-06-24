@@ -5,7 +5,7 @@ service first {
     entity Students as projection on lms.Students;
 };
 
-service myservdemo {
+service mysrvdemo {
 
     @readonly
     entity StudentSRV as projection on lms.Students;
