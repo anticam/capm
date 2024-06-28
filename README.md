@@ -37,4 +37,14 @@ cds run --in-memory
 
 access the app in URLs:  
 http://localhost:4004/#Shell-home  
-http://localhost:4004/#manage-Students  
+http://localhost:4004/#manage-Students
+
+deploy DB to SQLite, db.sqlite file created:  
+```
+cds deploy to sqlite
+```
+
+create hdi container:  
+```
+cf create-service hana hdi-shared somehdi
+```
