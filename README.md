@@ -24,8 +24,17 @@ File or Folder | Purpose
 
 Learn more at https://cap.cloud.sap/docs/get-started/.
 
-### source
-[CAPM](https://www.lab.ui5cn.com/docs/creating-custom-ui5-app)
+### Source
+Based on ui5cn content [CAPM](https://www.lab.ui5cn.com/docs/creating-custom-ui5-app)  
 
-http://localhost:4004/#Shell-home
-http://localhost:4004/#manage-Students
+
+
+
+run applicaton
+```
+cds run --in-memory
+```
+
+access the app in URLs:  
+http://localhost:4004/#Shell-home  
+http://localhost:4004/#manage-Students  
