@@ -22,7 +22,7 @@
       "port": 443,
       "database": "2AA5C41B6FCD49A582B1A46A940D426A",
       "username": "2AA5C41B6FCD49A582B1A46A940D426A_DCZ131CMVWTHGQWAL1UWUC0DW_RT",
-      "password": "Pn8ijMsxZILo36QLEnkcoRMABqo8mdUk4Hgtgxc3CH5q0OEs0lo-XXcId0XHXTPBwTKywXvIjrT6_HO5G4GyZjEzFrcFrn7xV3WX5crOIZn59hCCcqg34lQzknsBUO1k",
+      "password": "Pn8ijMsxZILo36QLEnkcoRMABqo8mdUk4Hgtgxc3CH5q0OEs0lo",
       "connectionTimeout": 30,
       "hanaOptions": {
         "encrypt": true,
@@ -44,7 +44,7 @@
       "server": "jdbc:sap://f4c45b8f-b7f3-4e1c-975d-914ff09402a7.hana.trial-us10.hanacloud.ondemand.com",
       "port": 443,
       "database": "2A8BC7FEB5AD4429B99EB866ED711AB2",
-      "password": "Px98dEl-X.d9X8B7-6bfKE57p_YG7dozvNIfKHZQwt8sWn8ADHcK3n6zoA6T9oRb52azmoL1O80tcJtuT4NZ8JhvI9cP-JIAax-aIgaJ.8XtjJUWUpWumyInC1BokY5h",
+      "password": "Px98dEl-X.d9X8B7-JIAax-aIgaJ.8XtjJUWUpWumyInC1BokY5h",
       "username": "2A8BC7FEB5AD4429B99EB866ED711AB2_F01HLDBADOZBSZFMK70VI1YS2_DT"
     }
   ]
