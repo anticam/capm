@@ -27,7 +27,7 @@ mta_archives/
 *.flattened-pom.xml
 
 # IDEs
-# .vscode
+.vscode/settings.json
 # .idea
 
 # @cap-js/cds-typer
