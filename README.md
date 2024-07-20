@@ -48,3 +48,8 @@ create hdi container:
 ```
 cf create-service hana hdi-shared somehdi
 ```
+
+https://developers.sap.com/tutorials/hana-dbx-extension..html
+
+
+https://github.com/ajaytech/capmlevel1final
