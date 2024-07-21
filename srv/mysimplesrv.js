@@ -14,11 +14,17 @@ module.exports = (srv) => {
         console.log(aFilter);
         //const result = await SELECT.from(Students).where({ email: "demo@demo.com" });
         if (typeof aFilter === "undefined") {
-            return await SELECT.from(Students).limit(2);
+            // let tempResult = await SELECT.from(Students).limit(2);
+            let tempResult = await SELECT.from(Students);
+            // tempResult = tempResult.filter(row => row.first_name === "john");
+            return tempResult;
         }
         const result = await SELECT.from(Students).where(aFilter);
-        console.log(result);
-        return result
+        // const result = await SELECT.from(Students).where(
+        //    { email: aFilter[2].val });
+        console.log("E-mail: " + aFilter[2].val);
+
+        return result;
     });
 }
 
