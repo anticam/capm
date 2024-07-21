@@ -41,12 +41,16 @@ http://localhost:4004/#manage-Students
 
 deploy DB to SQLite, db.sqlite file created:  
 ```
-cds deploy to sqlite
+cds deploy --to sqlite
 ```
 
 create hdi container:  
 ```
 cf create-service hana hdi-shared somehdi
+```
+
+```
+
 ```
 
 https://developers.sap.com/tutorials/hana-dbx-extension..html

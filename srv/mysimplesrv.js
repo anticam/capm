@@ -16,7 +16,12 @@ module.exports = (srv) => {
         if (typeof aFilter === "undefined") {
             return await SELECT.from(Students);
         } else {
-            return await SELECT.from(Students).where({ email: aFilter[2].val });
+            return await SELECT.from(Students).where(
+                {
+                    email: aFilter[2].val,
+                    first_name: aFilter[6].val
+                }
+            );
         }
 
 

@@ -1,5 +1,21 @@
-###
+### list all the students
 GET http://localhost:4004/odata/v4/mysrvdemo/StudentSRV
 
-###
+### list student with email demo
 GET http://localhost:4004/odata/v4/mysrvdemo/StudentSRV(email='demo@demo.com')
+
+### list student with email john
+GET http://localhost:4004/odata/v4/mysrvdemo/StudentSRV(email='john@demo.com')
+
+### list student with nonexisting email
+GET http://localhost:4004/odata/v4/mysrvdemo/StudentSRV(email='ben@demo.com')
+
+### list student with email john and first name
+GET http://localhost:4004/odata/v4/mysrvdemo/StudentSRV(email='john@demo.com',first_name='john')
+
+
+### list student with email john and first name
+GET http://localhost:4004/odata/v4/mysrvdemo/StudentSRV(email='ajay@demo.com',first_name='ajay')
+
+### list student with email john and first name
+GET http://localhost:4004/odata/v4/mysrvdemo/StudentSRV(email='john@demo.com',first_name='ajay')
