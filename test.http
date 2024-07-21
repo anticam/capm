@@ -11,11 +11,14 @@ GET http://localhost:4004/odata/v4/mysrvdemo/StudentSRV(email='john@demo.com')
 GET http://localhost:4004/odata/v4/mysrvdemo/StudentSRV(email='ben@demo.com')
 
 ### list student with email john and first name
+### it needs first_name as key in cds
 GET http://localhost:4004/odata/v4/mysrvdemo/StudentSRV(email='john@demo.com',first_name='john')
 
 
 ### list student with email john and first name
+### it needs first_name as key in cds
 GET http://localhost:4004/odata/v4/mysrvdemo/StudentSRV(email='ajay@demo.com',first_name='ajay')
 
-### list student with email john and first name
+### list student with email john and first name ajay, not found
+### it needs first_name as key in cds
 GET http://localhost:4004/odata/v4/mysrvdemo/StudentSRV(email='john@demo.com',first_name='ajay')

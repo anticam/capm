@@ -14,19 +14,15 @@ module.exports = (srv) => {
         console.log(aFilter);
         //const result = await SELECT.from(Students).where({ email: "demo@demo.com" });
         if (typeof aFilter === "undefined") {
-            return await SELECT.from(Students);
-        } else {
-            return await SELECT.from(Students).where(
-                {
-                    email: aFilter[2].val,
-                    first_name: aFilter[6].val
-                }
-            );
+            return await SELECT.from(Students).limit(2);
         }
-
-
+        const result = await SELECT.from(Students).where(aFilter);
+        console.log(result);
+        return result
     });
-};
+}
+
+
 
 // req.query.SELECT.from.ref[0].where[2].val
 // 'demo@demo.com'
