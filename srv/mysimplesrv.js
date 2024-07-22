@@ -6,27 +6,53 @@ const { Students } = cds.entities("myCompany.hr.lms");
 
 module.exports = (srv) => {
 
-    srv.on("READ", "StudentSRV", async (req, res) => {
+    srv.on("READ", "GetStudent", async (req, res) => {
         console.log("hello");
 
         const { SELECT } = cds.ql;
         const aFilter = req.query.SELECT.from.ref[0].where;
         console.log(aFilter);
-        //const result = await SELECT.from(Students).where({ email: "demo@demo.com" });
-        if (typeof aFilter === "undefined") {
-            // let tempResult = await SELECT.from(Students).limit(2);
-            let tempResult = await SELECT.from(Students);
-            // tempResult = tempResult.filter(row => row.first_name === "john");
-            return tempResult;
-        }
-        const result = await SELECT.from(Students).where(aFilter);
-        // const result = await SELECT.from(Students).where(
-        //    { email: aFilter[2].val });
-        console.log("E-mail: " + aFilter[2].val);
 
-        return result;
+        if (typeof aFilter !== "undefined") {
+            // with filters
+            const result = await SELECT.from(Students).where(aFilter);
+            return result;
+        }
+
+        // without filters
+        const tempResult = await SELECT.from(Students);
+        return tempResult;
     });
+
+    srv.after("READ", "GetStudent", data => {
+        let finalValue = data.map(d => {
+            d.first_name = d.first_name + " " + d.last_name;
+            //return d;
+        })
+
+        console.log(finalValue);
+
+        return finalValue;
+    });
+
+    srv.on("CREATE", "UpdateStudent", async (req, res) => {
+
+        let firstName = req.data.first_name;
+        let studentEmail = req.data.email;
+
+        let result = await UPDATE(Students).set({
+            first_name: firstName
+        }).where({
+            email: studentEmail
+        });
+
+        console.log(result);
+
+        return req.data;
+    });
+
 }
+
 
 
 

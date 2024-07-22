@@ -56,7 +56,7 @@
                     "name": "sap.fe.templates.ListReport",
                     "options": {
                         "settings": {
-                            "entitySet": "StudentSRV"
+                            "entitySet": "GetStudent"
                         }
                     }
                 }

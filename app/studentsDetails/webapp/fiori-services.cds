@@ -1,7 +1,7 @@
 using mysrvdemo as serviceStudent from '../../../srv/mysimplesrv';
 
 
-annotate serviceStudent.StudentSRV with @(UI: {
+annotate serviceStudent.GetStudent with @(UI: {
 
     SelectionFields: [
 
