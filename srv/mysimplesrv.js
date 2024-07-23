@@ -51,6 +51,22 @@ module.exports = (srv) => {
         return req.data;
     });
 
+    srv.on("CREATE", "UpdateStudentJohn", async (req, res) => {
+
+        let firstName = req.data.first_name;
+        // let studentEmail = req.data.email;
+
+        let result = await UPDATE(Students).set({
+            first_name: "Mr. " + firstName
+        }).where({
+            first_name: firstName
+        });
+
+        console.log(result);
+
+        return req.data;
+    });
+
 }
 
 
