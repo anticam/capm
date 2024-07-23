@@ -40,26 +40,16 @@ module.exports = (srv) => {
         let firstName = req.data.first_name;
         let studentEmail = req.data.email;
 
-        let returnData = await cds
-            .transaction(req)
-            .run(() => {
-                UPDATE(Students).set({
-                    first_name: firstName
-                }).where({
-                    email: studentEmail
-                });
-            }).then((resolve, reject) => {
-                if (typeof resolve !== "undefined" && resolve >= 1) {
-                    // return data here
+        const tx = cds.transaction(req);
+        const affectedRows = await tx.run(
+            UPDATE(Students)
+                .set({ first_name: "Mr. " + firstName })
+                //.where({ email: studentEmail })
+                .where({ first_name: 'john' })
+        )
 
-                } else {
-                    req.error(500, "Error in Updating Record");
-                }
+        if (affectedRows == 0) return req.error(409, "no records found");
 
-            }).catch((err) => {
-                console.log(err);
-                req.error(500, "Error in Updating Record - catch");
-            });
 
         return req.data;
     });
@@ -67,17 +57,27 @@ module.exports = (srv) => {
     srv.on("CREATE", "UpdateStudentJohn", async (req, res) => {
 
         let firstName = req.data.first_name;
-        // let studentEmail = req.data.email;
+        let studentEmail = req.data.email;
 
-        let result = await UPDATE(Students).set({
-            first_name: "Mr. " + firstName
-        }).where({
-            first_name: firstName
-        });
+        const tx = cds.transaction(req);
+        const affectedRows = await tx.run(
+            UPDATE(Students)
+                .set({ first_name: "Mr. " + firstName })
+                //.where({ email: studentEmail })
+                .where({ first_name: 'john' })
+        )
 
-        console.log(result);
+        if (affectedRows == 0) return req.error(409, "no records found");
 
-        return req.data;
+        //let result = await UPDATE(Students).set({
+        //    first_name: "Mr. " + firstName
+        //}).where({
+        //    email: studentEmail
+        //});
+
+        //console.log(result);
+
+        //return req.data;
     });
 
 }
