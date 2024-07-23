@@ -40,13 +40,26 @@ module.exports = (srv) => {
         let firstName = req.data.first_name;
         let studentEmail = req.data.email;
 
-        let result = await UPDATE(Students).set({
-            first_name: firstName
-        }).where({
-            email: studentEmail
-        });
+        let returnData = await cds
+            .transaction(req)
+            .run(() => {
+                UPDATE(Students).set({
+                    first_name: firstName
+                }).where({
+                    email: studentEmail
+                });
+            }).then((resolve, reject) => {
+                if (typeof resolve !== "undefined" && resolve >= 1) {
+                    // return data here
 
-        console.log(result);
+                } else {
+                    req.error(500, "Error in Updating Record");
+                }
+
+            }).catch((err) => {
+                console.log(err);
+                req.error(500, "Error in Updating Record - catch");
+            });
 
         return req.data;
     });
