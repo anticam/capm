@@ -6,7 +6,7 @@
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
-    "@sap/cds": "^7",
+    "@sap/cds": "^8",
     "@sap/cds-hana": "^2",
     "@sap/xssec": "^4.1.3",
     "capm": "file:",
@@ -28,14 +28,6 @@
     "requires": {
       "[production]": {
         "db": "hana"
-      },
-      "[local]": {
-        "db": {
-          "kind": "sqlite",
-          "credentials": {
-            "url": "db.sqlite"
-          }
-        }
       }
     }
   }
