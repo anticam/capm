@@ -56,50 +56,40 @@ module.exports = (srv) => {
 
     srv.on("CREATE", "UpdateStudentJohn", async (req, res) => {
 
-        let firstName = req.data.first_name;
-        let studentEmail = req.data.email;
+        const { INSERT } = cds.ql;
+        // const result = await SELECT.from(Students).where(aFilter);
+        const result = await INSERT.into(Students).entries({
+            first_name: req.data.first_name,
+            email: req.data.email,
+            last_name: req.data.last_name,
+            date_sign_up: req.data.date_sign_up
+        });
+        return result;
 
-        const tx = cds.transaction(req);
-        const affectedRows = await tx.run(
-            UPDATE(Students)
-                .set({ first_name: "Mr. " + firstName })
-                //.where({ email: studentEmail })
-                .where({ first_name: 'john' })
-        )
-
-        if (affectedRows == 0) return req.error(409, "no records found");
-
-        //let result = await UPDATE(Students).set({
-        //    first_name: "Mr. " + firstName
-        //}).where({
-        //    email: studentEmail
-        //});
-
-        //console.log(result);
-
-        //return req.data;
     });
 
+    srv.on("CREATE", "InsertStudent", async (req) => {
+
+        const tx = cds.tx(req);
+
+        try {
+            const createdEntity = await tx.run(INSERT.into(Students).entries(
+                [
+                    {
+                        email: req.data.email,
+                        first_name: req.data.first_name,
+                        last_name: req.data.last_name,
+                        date_sign_up: req.data.date_sign_up
+                    }
+                ]
+            ));
+        } catch (e) {
+            await tx.rollback(e);
+            console.log(e);
+        }
+        // console.log(createdEntity);
+        return req.data;
+
+    });
 }
-
-
-
-
-// req.query.SELECT.from.ref[0].where[2].val
-// 'demo@demo.com'
-
-// demoP = new Promise()
-// demoP
-//    .then((resolve, reject) => {
-//        // code when resolved
-//        result = value;
-//    })
-//    .catch(err => {
-//
-//    })
-//    .final(() => {
-//
-//    });
-
-
 

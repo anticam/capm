@@ -11,4 +11,10 @@ service mysrvdemo {
     @updateonly
     entity UpdateStudentJohn as projection on lms.Students;
 
+    @insertonly
+    entity InsertStudent     as projection on lms.Students;
+
+    @deleteonly
+    entity DeleteStudent     as projection on lms.Students;
+
 }
