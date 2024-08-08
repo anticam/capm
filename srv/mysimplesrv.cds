@@ -17,4 +17,7 @@ service mysrvdemo {
     @deleteonly
     entity DeleteStudent     as projection on lms.Students;
 
+    @deleteonly
+    entity DeleteStudent2    as projection on lms.Students;
+
 }

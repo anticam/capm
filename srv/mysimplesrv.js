@@ -91,5 +91,44 @@ module.exports = (srv) => {
         return req.data;
 
     });
-}
+
+    // https://cap.cloud.sap/docs/node.js/events
+    srv.on("DELETE", "DeleteStudent", async (req) => {
+
+        const tx = cds.tx(req);
+
+        try {
+            const deletedEntity = await tx.run(DELETE.from(Students).where(
+                { email: req.data.email }
+            ));
+        } catch (e) {
+            await tx.rollback(e);
+            console.log(e);
+        }
+        // console.log(createdEntity);
+        return req.data;
+    });
+
+    srv.on("DELETE", "DeleteStudent2", async (req) => {
+
+        const tx = cds.tx(req);
+
+        const deletedEntity = await tx.run(DELETE.from(Students).where(
+            { email: req.data.email }
+        ))
+            .then((resolve, reject) => {
+                console.log("resolve:", resolve);
+                console.log("reject:", reject);
+            })
+            .catch(err => {
+                console.log(err);
+                tx.rollback(e);
+                req.error(500, "Error");
+            });
+
+        // console.log(createdEntity);
+        return req.data;
+    });
+
+};
 
