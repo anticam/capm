@@ -1,5 +1,11 @@
 using myCompany.hr.lms from '../db/Students';
 
+// service mysrvdemo @(path: 'mylms') {
+// http://localhost:4004/odata/v4/mylms/GetStudent
+//
+// service mysrvdemo @(path: '/mylms') {
+// http://localhost:4004/mylms/GetStudent
+//
 service mysrvdemo {
 
     @readonly

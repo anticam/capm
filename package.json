@@ -28,6 +28,9 @@
     "requires": {
       "[production]": {
         "db": "hana"
+      },
+      "[local]": {
+        "db": "sqlite"
       }
     }
   }
