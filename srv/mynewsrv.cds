@@ -1,7 +1,7 @@
 using myCompany.hr.lms from '../db/Students';
 using mysrvdemo as mysrvdemo from './mysimplesrv';
 
-extend service mysrvdemo with {
+extend service mysrvdemo with @(impl: './mynewsrv.js') {
     @readonly
     entity CustomGetStudent as
         projection on lms.Students {

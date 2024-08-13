@@ -79,3 +79,13 @@ Content-Type: application/json
     "email":"antika@demo.com"
 }
 
+### InsertStudent
+POST {{server}}/odata/v4/mysrvdemo/InsertStudent HTTP/1.1
+Content-Type: application/json
+
+{
+    "email":"bogyo8@gmail.com",
+    "first_name": "bogyo",
+    "last_name": "kapitany"
+}
+
