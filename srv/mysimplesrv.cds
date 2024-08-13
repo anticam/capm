@@ -27,3 +27,16 @@ service mysrvdemo {
     entity DeleteStudent2    as projection on lms.Students;
 
 }
+
+// moved to mynewsrv.cds
+//extend service mysrvdemo with {
+//    @readonly
+//    entity CustomGetStudent as
+//        projection on lms.Students {
+// /           *,
+//            first_name || ' ' || last_name as full_name : String
+//        }
+//        excluding {
+//            date_sign_up
+//        }
+//}
