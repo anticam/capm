@@ -57,3 +57,5 @@ https://developers.sap.com/tutorials/hana-dbx-extension..html
 
 
 https://github.com/ajaytech/capmlevel1final
+
+n:n replaced with stuednt 1:n - enrollment - n:1 - courses
