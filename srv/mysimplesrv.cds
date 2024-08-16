@@ -28,6 +28,12 @@ service mysrvdemo {
 
 }
 
+service mysrvdemoapp {
+
+
+}
+
+
 // moved to mynewsrv.cds
 //extend service mysrvdemo with {
 //    @readonly

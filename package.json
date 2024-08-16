@@ -17,6 +17,7 @@
     "@cap-js/sqlite": "^1",
     "@sap/cds-dk": "^7",
     "@sap/eslint-plugin-cds": "^3",
+    "cap-js-mockdata": "^0.0.3",
     "eslint": "^9"
   },
   "scripts": {
