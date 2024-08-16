@@ -61,3 +61,6 @@ https://github.com/ajaytech/capmlevel1final
 n:n replaced with student 1:n - enrollment - n:1 - courses
 
 https://github.com/SAP-samples/cap-service-integration-codejam/tree/main
+
+https://fakerjs.dev/api/
+https://www.npmjs.com/package/cap-js-mockdata?activeTab=readme
