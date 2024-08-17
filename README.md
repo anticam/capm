@@ -64,3 +64,7 @@ https://github.com/SAP-samples/cap-service-integration-codejam/tree/main
 
 https://fakerjs.dev/api/
 https://www.npmjs.com/package/cap-js-mockdata?activeTab=readme
+
+http://localhost:4004/odata/v4/mysrvdemoapp/GetStudent('ajay@demo.com')/enrollment(3003)/course
+http://localhost:4004/odata/v4/mysrvdemoapp/GetStudent('ajay@demo.com')/enrollment(3003)/course/content
+http://localhost:4004/odata/v4/mysrvdemoapp/GetStudent/ajay@demo.com/enrollment/3003/course/content

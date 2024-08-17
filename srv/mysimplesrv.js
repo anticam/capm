@@ -4,7 +4,7 @@ const cds = require("@sap/cds");
 const { Students } = cds.entities("myCompany.hr.lms");
 
 
-module.exports = (srv) => {
+module.exports["mysrvdemo"] = (srv) => {
 
     srv.on("READ", "GetStudent", async (req, res) => {
         console.log("hello");
@@ -131,4 +131,30 @@ module.exports = (srv) => {
     });
 
 };
+
+module.exports["mysrvdemoapp"] = (srv) => {
+
+    srv.before("READ", "GetStudent", (req, res) => {
+        console.log("Inside GetStudent");
+
+    });
+
+    srv.before("READ", "GetCourse", async (req, res) => {
+        console.log("Inside GetCourse");
+
+    });
+
+    srv.before("READ", "GetContent", async (req, res) => {
+        console.log("Inside GetContent");
+
+    });
+
+    srv.before("READ", "GetEnrollment", async (req, res) => {
+        console.log("Inside GetEnrollment");
+
+    });
+
+
+
+}
 

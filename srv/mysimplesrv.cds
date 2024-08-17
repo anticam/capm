@@ -1,4 +1,5 @@
 using myCompany.hr.lms from '../db/Students';
+using {myCompany.hr.lms1 as lms1} from '../db/Structure';
 
 // service mysrvdemo @(path: 'mylms') {
 // http://localhost:4004/odata/v4/mylms/GetStudent
@@ -29,8 +30,17 @@ service mysrvdemo {
 }
 
 service mysrvdemoapp {
+    @readonly
+    entity GetStudent    as projection on lms1.Students;
 
+    @readonly
+    entity GetCourse     as projection on lms1.Courses;
 
+    @readonly
+    entity GetContent    as projection on lms1.Contents;
+
+    @readonly
+    entity GetEnrollment as projection on lms1.Enrollments;
 }
 
 

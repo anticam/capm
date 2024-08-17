@@ -1,0 +1,4 @@
+ID;course_name;course_url;course_duration;course_price;published_status
+1;Learn UI5;http://192.168.1.166/ui5;10;192.8;true
+2;Learn SCP;http://192.168.1.166/scp;12;182.6;true
+3;Learn CDS;http://192.168.1.166/cds;8;122.4;true
