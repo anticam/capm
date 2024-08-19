@@ -1,4 +1,4 @@
-using mysrvdemo as serviceStudent from '../../../srv/mysimplesrv';
+using mysrvdemoapp as serviceStudent from '../../../srv/mysimplesrv';
 
 
 annotate serviceStudent.GetStudent with @(UI: {
@@ -27,8 +27,19 @@ annotate serviceStudent.GetStudent with @(UI: {
     ],
     HeaderInfo     : {
         $Type         : 'UI.HeaderInfoType',
-        TypeName      : 'Email',
-        TypeNamePlural: 'Emails',
-        Description   : {Value: email}
+        TypeName      : 'Student',
+        TypeNamePlural: 'Students',
+        Title         : {Value: last_name},
+        Description   : {
+            Value: first_name,
+            Label: 'first_name'
+        }
     },
+
+//    HeaderInfo     : {
+//        $Type         : 'UI.HeaderInfoType',
+//        TypeName      : 'Email',
+//        TypeNamePlural: 'Emails',
+//        Description   : {Value: email}
+//    },
 });

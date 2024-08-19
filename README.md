@@ -68,3 +68,6 @@ https://www.npmjs.com/package/cap-js-mockdata?activeTab=readme
 http://localhost:4004/odata/v4/mysrvdemoapp/GetStudent('ajay@demo.com')/enrollment(3003)/course
 http://localhost:4004/odata/v4/mysrvdemoapp/GetStudent('ajay@demo.com')/enrollment(3003)/course/content
 http://localhost:4004/odata/v4/mysrvdemoapp/GetStudent/ajay@demo.com/enrollment/3003/course/content
+
+changing navigation to object page
+https://sapui5.hana.ondemand.com/sdk/#/topic/8bd546e27a5f41cea6e251ba04534d70
