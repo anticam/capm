@@ -3,10 +3,10 @@ using mysrvdemoapp as serviceStudent from '../../../srv/mysimplesrv';
 
 annotate serviceStudent.GetStudent with @(UI: {
 
-    SelectionFields: [
+    SelectionFields                : [
 
     ],
-    LineItem       : [
+    LineItem                       : [
         {
             Label: 'Email',
             Value: email,
@@ -25,7 +25,7 @@ annotate serviceStudent.GetStudent with @(UI: {
             Value: date_sign_up,
         }
     ],
-    HeaderInfo     : {
+    HeaderInfo                     : {
         $Type         : 'UI.HeaderInfoType',
         TypeName      : 'Student',
         TypeNamePlural: 'Students',
@@ -34,6 +34,37 @@ annotate serviceStudent.GetStudent with @(UI: {
             Value: first_name,
             Label: 'first_name'
         }
+    },
+
+    Facets                         : [{
+        $Type : 'UI.ReferenceFacet',
+        Label : 'Personal Information',
+        Target: '@UI.FieldGroup#PersonalStudentInfo'
+    }],
+
+    FieldGroup #PersonalStudentInfo: {
+        $Type: 'UI.FieldGroupType',
+        Label: 'Personal Data',
+        Data : [
+            {
+                Label: 'First Name',
+                Value: first_name
+            },
+            {
+                Label: 'Last Name',
+                Value: last_name
+            },
+            {
+                Label: 'Email',
+                Value: email
+            },
+            {
+                Label: 'Date Sign Up',
+                Value: date_sign_up
+            }
+
+
+        ]
     },
 
 //    HeaderInfo     : {

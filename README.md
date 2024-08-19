@@ -71,3 +71,7 @@ http://localhost:4004/odata/v4/mysrvdemoapp/GetStudent/ajay@demo.com/enrollment/
 
 changing navigation to object page
 https://sapui5.hana.ondemand.com/sdk/#/topic/8bd546e27a5f41cea6e251ba04534d70
+
+
+FE - Grouping of Fields
+https://sapui5.hana.ondemand.com/sdk/#/topic/cb1748ea9b984251addc03718d98df35.html
