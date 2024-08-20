@@ -52,6 +52,21 @@
                     "pattern": "GetStudent({key}):?query:",
                     "name": "StudentDetail",
                     "target": "StudentDetail"
+                },
+                {
+                    "pattern": "GetStudent({key})/enrollment:?query:",
+                    "name": "Enrollment",
+                    "target": "Enrollment"
+                },
+                {
+                    "pattern": "GetStudent({key})/enrollment({key1}):?query:",
+                    "name": "EnrollmentDetail",
+                    "target": "EnrollmentDetail"
+                },
+                {
+                    "pattern": "GetStudent({key})/enrollment({key1})/course:?query:",
+                    "name": "CourseDetails",
+                    "target": "CourseDetails"
                 }
             ],
             "targets": {
@@ -78,7 +93,51 @@
                     "name": "sap.fe.templates.ObjectPage",
                     "options": {
                         "settings": {
-                            "entitySet": "GetStudent"
+                            "entitySet": "GetStudent",
+                            "navigation": {
+                                "enrollment": {
+                                    "detail": {
+                                        "route": "Enrollment"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "Enrollment": {
+                    "type": "Component",
+                    "id": "Enrollment",
+                    "name": "sap.fe.templates.ObjectPage",
+                    "options": {
+                        "settings": {
+                            "entitySet": "GetEnrollment"
+                        }
+                    }
+                },
+                "EnrollmentDetail": {
+                    "type": "Component",
+                    "id": "EnrollmentDetail",
+                    "name": "sap.fe.templates.ObjectPage",
+                    "options": {
+                        "settings": {
+                            "entitySet": "GetEnrollment",
+                            "navigation": {
+                                "course": {
+                                    "detail": {
+                                        "route": "CourseDetails"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "CourseDetails": {
+                    "type": "Component",
+                    "id": "CourseDetails",
+                    "name": "sap.fe.templates.ObjectPage",
+                    "options": {
+                        "settings": {
+                            "entitySet": "GetCourse"
                         }
                     }
                 }

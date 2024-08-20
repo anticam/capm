@@ -36,11 +36,18 @@ annotate serviceStudent.GetStudent with @(UI: {
         }
     },
 
-    Facets                         : [{
-        $Type : 'UI.ReferenceFacet',
-        Label : 'Personal Information',
-        Target: '@UI.FieldGroup#PersonalStudentInfo'
-    }],
+    Facets                         : [
+        {
+            $Type : 'UI.ReferenceFacet',
+            Label : 'Personal Information',
+            Target: '@UI.FieldGroup#PersonalStudentInfo'
+        },
+        {
+            $Type : 'UI.ReferenceFacet',
+            Label : 'Enrollment Details',
+            Target: 'enrollment/@UI.LineItem' // reference facet
+        }
+    ],
 
     FieldGroup #PersonalStudentInfo: {
         $Type: 'UI.FieldGroupType',
@@ -73,4 +80,64 @@ annotate serviceStudent.GetStudent with @(UI: {
 //        TypeNamePlural: 'Emails',
 //        Description   : {Value: email}
 //    },
+});
+
+annotate serviceStudent.GetEnrollment with @(UI: {
+    LineItem: [
+        {
+            Label: 'Enrollment ID',
+            Value: ID,
+        },
+        {
+            Label: 'Course ID',
+            Value: course_ID,
+        }
+    ],
+    Facets  : [{
+        $Type : 'UI.ReferenceFacet',
+        Label : 'Course Details',
+        Target: 'course/FieldGroup#CourseDetails'
+    }
+
+    ],
+
+});
+
+annotate serviceStudent.GetCourse with @(UI: {
+    HeaderInfo               : {
+        $Type         : 'UI.HeaderInfoType',
+        TypeName      : 'Course',
+        TypeNamePlural: 'Courses',
+        Title         : {Value: ID},
+        Description   : {
+            Value: course_name,
+            Label: 'Course Name'
+        }
+    },
+    FieldGroup #CourseDetails: {
+        $Type: 'UI.FieldGroupType',
+        Label: 'Personal Data',
+        Data : [
+            {
+                Label: 'Course Name',
+                Value: course_name
+            },
+            {
+                Label: 'Course Duration in Hrs',
+                Value: course_duration
+            },
+            {
+                Label: 'Course Price in USD',
+                Value: course_price
+            },
+            {
+                Label: 'Course Url',
+                Value: course_url
+            }
+
+
+        ]
+    },
+
+
 });
