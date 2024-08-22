@@ -31,7 +31,7 @@
                 "settings": {
                     "synchronizationMode": "None",
                     "operationMode": "Server",
-                    "autoExpandSelect": false,
+                    "autoExpandSelect": true,
                     "earlyRequests": false,
                     "groupProperties": {
                         "default": {

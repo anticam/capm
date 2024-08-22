@@ -93,30 +93,50 @@ annotate serviceStudent.GetEnrollment with @(UI: {
             Value: course_ID,
         }
     ],
+
+    //HeaderInfo: {
+    //    // $Type         : 'UI.HeaderInfoType',
+    //    TypeName      : 'Course',
+    //    TypeNamePlural: 'Courses',
+    //    Title         : {
+    //        $Type: 'UI.DataField',
+    //        Value: ID
+    //    },
+    //    Description   : {
+    //        $Type: 'UI.DataField',
+    //        Value: course_ID
+    //    }
+    //},
+
     Facets  : [{
         $Type : 'UI.ReferenceFacet',
-        Label : 'Course Details',
-        Target: 'course/FieldGroup#CourseDetails'
+        Label : 'CourseDetails',
+        Target: 'course/@UI.FieldGroup#CourseDetails'
     }
 
-    ],
+    ]
+
 
 });
 
 annotate serviceStudent.GetCourse with @(UI: {
+
     HeaderInfo               : {
         $Type         : 'UI.HeaderInfoType',
         TypeName      : 'Course',
         TypeNamePlural: 'Courses',
-        Title         : {Value: ID},
+        Title         : {
+            $Type: 'UI.DataField',
+            Value: ID
+        },
         Description   : {
-            Value: course_name,
-            Label: 'Course Name'
+            $Type: 'UI.DataField',
+            Value: course_name
         }
     },
     FieldGroup #CourseDetails: {
         $Type: 'UI.FieldGroupType',
-        Label: 'Personal Data',
+        Label: 'CourseDetails',
         Data : [
             {
                 Label: 'Course Name',
